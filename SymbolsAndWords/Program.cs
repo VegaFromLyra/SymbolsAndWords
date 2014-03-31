@@ -4,7 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Given a list of chemical symbols which can be made 
+// of 1 or 2 characters, find the longest word in the 
+// dictionary that can be 
+// constructed using the given list of symbols.
 
+// For simplicity, in this implementation,
+// I have used a small list of words instead of loading up 
+// all words in the dictionary
 namespace SymbolsAndWords
 {
     class Program
@@ -128,20 +135,10 @@ namespace SymbolsAndWords
             return hashSet;
         }
 
-        // returns 0 if they are equal
-        // returns positive if s1 > s2
-        // retturns negative if s1 < s2
-        static int CompareByLength(string s1, string s2)
-        {
-            return s1.Length.CompareTo(s2.Length);
-        }
-
-        // returns 0 if they are equal
-        // returns positive if s2 > s1
-        // retturns negative if s2 < s1
+        // Places s1 before s2 if length of s1 is greater than s2
         static int CompareByLengthDescending(string s1, string s2)
         {
-            return s1.Length.CompareTo(s2.Length) > 0 ? -1 : 1;
+            return s1.Length > s2.Length ? -1 : 1;
         }
     }
 }
